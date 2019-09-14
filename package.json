@@ -1,0 +1,29 @@
+{
+  "name": "react-cli",
+  "version": "1.0.0",
+  "description": "从零开始搭建React全家桶",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhehuaxuan/react-cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhehuaxuan/react-cli/issues"
+  },
+  "homepage": "https://github.com/zhehuaxuan/react-cli#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "add": "^2.0.6",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8",
+    "yarn": "^1.17.3"
+  }
+}

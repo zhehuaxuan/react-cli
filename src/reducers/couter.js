@@ -1,4 +1,4 @@
-import {INCREMENT, DECREMENT, RESET} from './action/count';
+import {INCREMENT, DECREMENT, RESET} from '../actions/counter';
 
 /*
 * 初始化state

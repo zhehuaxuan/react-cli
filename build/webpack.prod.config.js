@@ -2,6 +2,8 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 
@@ -12,8 +14,12 @@ module.exports = {
         ],
         vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
     },
-    mode: 'development',
-
+    mode: 'production',
+    optimization: {
+        splitChunks: {
+          chunks: 'all'
+        }
+    },
     resolve: {
         alias: {
             app: path.join(__dirname, '../src/app'),
@@ -64,11 +70,13 @@ module.exports = {
         new MiniCssExtractPlugin({ // 压缩css
             filename: "[name].[contenthash].css",
             chunkFilename: "[id].[contenthash].css"
-        })
+        }),
+        new OptimizeCssAssetsPlugin(),
+        new CleanWebpackPlugin()
     ],
 
 
-    devtool: 'inline-source-map',
+    devtool: 'none',
 
     // webpack-dev-server
     devServer: {
